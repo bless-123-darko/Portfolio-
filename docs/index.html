@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Blessed Darko Yirenkyi — AI Engineer, IT Infrastructure Specialist, and Web Developer." />
+  <title>Blessed Darko Yirenkyi | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'bg-primary':   '#0a0f1e',
+            'bg-secondary': '#111827',
+            'bg-card':      '#1a2235',
+            'accent':       '#3B82F6',
+            'accent-glow':  '#00C2FF',
+            'border-dark':  '#1f2d44',
+          },
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            body:    ['IBM Plex Sans', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="font-body text-gray-100" style="background-color:#0a0f1e;">
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+      <!-- Logo -->
+      <a href="#hero" class="logo-text font-display font-bold text-xl tracking-tight text-white smooth-scroll">
+        <span class="text-accent">B</span>lessed<span class="text-accent">.</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
+        <li><a href="#about"    class="nav-link smooth-scroll hover:text-white transition-colors duration-200">About</a></li>
+        <li><a href="#projects" class="nav-link smooth-scroll hover:text-white transition-colors duration-200">Projects</a></li>
+        <li><a href="#skills"   class="nav-link smooth-scroll hover:text-white transition-colors duration-200">Skills</a></li>
+        <li>
+          <a href="#contact" class="smooth-scroll px-4 py-2 rounded-md border border-accent text-accent hover:bg-accent hover:text-white transition-all duration-200 text-sm font-semibold">
+            Contact
+          </a>
+        </li>
+      </ul>
+
+      <!-- Mobile Hamburger -->
+      <button id="hamburger" class="md:hidden flex flex-col gap-1.5 p-2 group" aria-label="Toggle menu">
+        <span class="hamburger-line block h-0.5 w-6 bg-gray-300 transition-all duration-300"></span>
+        <span class="hamburger-line block h-0.5 w-6 bg-gray-300 transition-all duration-300"></span>
+        <span class="hamburger-line block h-0.5 w-6 bg-gray-300 transition-all duration-300"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-6 pt-2 border-t border-border-dark" style="background-color:#0d1422;">
+      <ul class="flex flex-col gap-4 text-gray-300 font-medium">
+        <li><a href="#about"    class="nav-link smooth-scroll block py-1 hover:text-white transition-colors">About</a></li>
+        <li><a href="#projects" class="nav-link smooth-scroll block py-1 hover:text-white transition-colors">Projects</a></li>
+        <li><a href="#skills"   class="nav-link smooth-scroll block py-1 hover:text-white transition-colors">Skills</a></li>
+        <li><a href="#contact"  class="nav-link smooth-scroll block py-1 hover:text-white transition-colors">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO SECTION ===================== -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Animated gradient mesh background -->
+    <div class="hero-gradient-bg absolute inset-0 pointer-events-none"></div>
+    <!-- Particle canvas -->
+    <canvas id="particles-canvas" class="absolute inset-0 pointer-events-none"></canvas>
+
+    <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+      <!-- Name -->
+      <h1 class="font-display font-extrabold text-4xl sm:text-5xl md:text-7xl text-white mb-4 leading-tight tracking-tight hero-title reveal-item">
+        Blessed Darko<br />
+        <span class="text-gradient">Yirenkyi</span>
+      </h1>
+
+      <!-- Typing subheadline -->
+      <div class="flex items-center justify-center gap-2 mb-6 reveal-item" style="animation-delay:0.2s;">
+        <span class="text-gray-400 text-base sm:text-lg md:text-xl font-medium">
+          <span id="typed-text" class="text-accent-glow font-semibold"></span><span class="typing-cursor">|</span>
+        </span>
+      </div>
+
+      <!-- Tagline -->
+      <p class="text-gray-400 text-base sm:text-lg md:text-xl max-w-xl mx-auto mb-10 leading-relaxed reveal-item" style="animation-delay:0.4s;">
+        Building intelligent systems that <span class="text-white font-medium">see</span>, <span class="text-white font-medium">think</span>, and <span class="text-white font-medium">scale</span>.
+      </p>
+
+      <!-- CTAs -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center reveal-item" style="animation-delay:0.6s;">
+        <a href="#projects" class="smooth-scroll btn-primary px-8 py-3.5 rounded-md font-semibold text-white text-sm tracking-wide transition-all duration-300">
+          View My Work
+        </a>
+        <a href="#contact" class="smooth-scroll px-8 py-3.5 rounded-md font-semibold text-sm tracking-wide border border-gray-600 text-gray-300 hover:border-accent hover:text-accent transition-all duration-300">
+          Get In Touch
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 scroll-indicator">
+      <div class="w-6 h-10 rounded-full border-2 border-gray-600 flex items-start justify-center p-1.5">
+        <div class="scroll-dot w-1.5 h-1.5 rounded-full bg-accent"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT SECTION ===================== -->
+  <section id="about" class="py-24 px-6" style="background-color:#0d1422;">
+    <div class="max-w-6xl mx-auto">
+
+      <!-- Section header -->
+      <div class="section-header mb-16 reveal-item">
+        <span class="section-label">Who I Am</span>
+        <h2 class="section-title font-display font-bold text-3xl sm:text-4xl md:text-5xl text-white mt-2">About Me</h2>
+        <div class="section-line mt-4"></div>
+      </div>
+
+      <!-- Two-column layout -->
+      <div class="flex flex-col md:flex-row items-center md:items-start gap-12 md:gap-16">
+
+        <!-- Profile photo (left) -->
+        <div class="reveal-item flex-shrink-0" style="animation-delay:0.1s;">
+          <div class="profile-avatar-wrapper">
+            <div class="profile-avatar w-56 h-56 sm:w-64 sm:h-64 rounded-full overflow-hidden border-4 border-accent/30">
+              <img src="bless.jpg" alt="Blessed Darko Yirenkyi" class="w-full h-full object-cover object-top" />
+            </div>
+            <div class="avatar-ring"></div>
+          </div>
+        </div>
+
+        <!-- Bio text (right) -->
+        <div class="reveal-item flex-1" style="animation-delay:0.2s;">
+          <p class="text-gray-300 text-base sm:text-lg leading-relaxed mb-6">
+            I am a multidisciplinary tech professional specializing in <span class="text-white font-medium">AI-driven video and image analysis</span>, IT infrastructure, and web development. In my work, I design AI models that analyze visual content, from identifying objects to detecting patterns.
+          </p>
+          <p class="text-gray-300 text-base sm:text-lg leading-relaxed mb-6">
+            I integrate these AI solutions with robust IT systems, ensuring seamless performance. Additionally, I craft <span class="text-white font-medium">dynamic, user-centric websites</span>, blending front-end design with AI-enhanced back-end capabilities.
+          </p>
+          <p class="text-gray-300 text-base sm:text-lg leading-relaxed mb-8">
+            My passion lies in making technology <span class="text-accent font-medium">accessible</span>, <span class="text-accent font-medium">scalable</span>, and <span class="text-accent font-medium">impactful</span>.
+          </p>
+
+          <!-- Stats row -->
+          <div class="flex flex-wrap gap-8">
+            <div class="stat-item">
+              <span class="stat-number font-display font-bold text-3xl text-white">3+</span>
+              <span class="stat-label block text-gray-500 text-sm mt-1">Major Projects</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number font-display font-bold text-3xl text-white">9+</span>
+              <span class="stat-label block text-gray-500 text-sm mt-1">Technologies</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number font-display font-bold text-3xl text-white">AI</span>
+              <span class="stat-label block text-gray-500 text-sm mt-1">Core Expertise</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROJECTS SECTION ===================== -->
+  <section id="projects" class="py-24 px-6" style="background-color:#0a0f1e;">
+    <div class="max-w-6xl mx-auto">
+
+      <!-- Section header -->
+      <div class="section-header mb-16 reveal-item">
+        <span class="section-label">What I've Built</span>
+        <h2 class="section-title font-display font-bold text-3xl sm:text-4xl md:text-5xl text-white mt-2">Featured Projects</h2>
+        <div class="section-line mt-4"></div>
+      </div>
+
+      <!-- Projects grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- Project 1: Bless AI -->
+        <article class="project-card reveal-item" style="animation-delay:0.1s;">
+          <!-- SWAP: Replace this div with an <img> for a project screenshot -->
+          <div class="project-image-placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-12 h-12 text-accent/50">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+            </svg>
+          </div>
+          <div class="project-card-body">
+            <h3 class="font-display font-bold text-xl text-white mb-3">Bless AI – Visual Authenticity Detection</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-5">
+              An advanced AI solution enabling users to upload images or videos for authenticity analysis. Using cutting-edge computer vision and deep learning, Bless AI differentiates between AI-generated content and original media — empowering content creators and digital forensics experts to verify media integrity.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Computer Vision</span>
+              <span class="tech-badge">Deep Learning</span>
+              <span class="tech-badge">AI/ML</span>
+            </div>
+            <a href="#" class="project-btn">
+              View Details
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1.5">
+                <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 2: Data Service Portal -->
+        <article class="project-card reveal-item" style="animation-delay:0.2s;">
+          <div class="project-image-placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-12 h-12 text-accent/50">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
+            </svg>
+          </div>
+          <div class="project-card-body">
+            <h3 class="font-display font-bold text-xl text-white mb-3">Data Service Portal</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-5">
+              A custom web platform that empowers users to securely buy and manage data bundles. Features a personalized user dashboard for purchasing data packages, and a dedicated admin interface for monitoring transactions, adjusting pricing, and onboarding agents. Built with a scalable architecture to bridge data providers and end-users.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="tech-badge">PHP</span>
+              <span class="tech-badge">Bootstrap</span>
+              <span class="tech-badge">Web Development</span>
+              <span class="tech-badge">Admin Dashboard</span>
+            </div>
+            <a href="#" class="project-btn">
+              View Details
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1.5">
+                <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 3: Online Marketplace -->
+        <article class="project-card reveal-item md:col-span-2" style="animation-delay:0.3s;">
+          <div class="project-image-placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-12 h-12 text-accent/50">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+            </svg>
+          </div>
+          <div class="project-card-body">
+            <h3 class="font-display font-bold text-xl text-white mb-3">Online Marketplace Platform</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-5">
+              A fully customizable marketplace enabling users to buy and sell products seamlessly. Sellers can create storefronts, list items, and manage inventory, while buyers can browse and securely purchase products. Inspired by platforms like Jumia, it prioritizes UX with intuitive search, secure payment gateways, and a scalable environment for growth.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="tech-badge">PHP</span>
+              <span class="tech-badge">Tailwind CSS</span>
+              <span class="tech-badge">E-Commerce</span>
+              <span class="tech-badge">Scalable Architecture</span>
+            </div>
+            <a href="#" class="project-btn">
+              View Details
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ml-1.5">
+                <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SKILLS SECTION ===================== -->
+  <section id="skills" class="py-24 px-6" style="background-color:#0d1422;">
+    <div class="max-w-6xl mx-auto">
+
+      <!-- Section header -->
+      <div class="section-header mb-16 reveal-item">
+        <span class="section-label">What I Work With</span>
+        <h2 class="section-title font-display font-bold text-3xl sm:text-4xl md:text-5xl text-white mt-2">Skills &amp; Technologies</h2>
+        <div class="section-line mt-4"></div>
+      </div>
+
+      <!-- Skills grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+
+        <!-- PHP -->
+        <div class="skill-tile reveal-item" style="animation-delay:0.05s;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP" class="skill-icon" />
+          <span class="skill-label">PHP</span>
+        </div>
+
+        <!-- Python -->
+        <div class="skill-tile reveal-item" style="animation-delay:0.10s;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" class="skill-icon" />
+          <span class="skill-label">Python</span>
+        </div>
+
+        <!-- C++ -->
+        <div class="skill-tile reveal-item" style="animation-delay:0.15s;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++" class="skill-icon" />
+          <span class="skill-label">C++</span>
+        </div>
+
+        <!-- CSS3 -->
+        <div class="skill-tile reveal-item" style="animation-delay:0.20s;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3" class="skill-icon" />
+          <span class="skill-label">CSS3</span>
+        </div>
+
+        <!-- Bootstrap -->
+        <div class="skill-tile reveal-item" style="animation-delay:0.25s;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" class="skill-icon" />
+          <span class="skill-label">Bootstrap</span>
+        </div>
+
+        <!-- Tailwind CSS -->
+        <div class="skill-tile reveal-item" style="animation-delay:0.30s;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" class="skill-icon" />
+          <span class="skill-label">Tailwind CSS</span>
+        </div>
+
+        <!-- AI / Computer Vision -->
+        <div class="skill-tile reveal-item" style="animation-delay:0.35s;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="1.5" class="skill-icon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+          </svg>
+          <span class="skill-label">AI / ML</span>
+        </div>
+
+        <!-- Computer Vision -->
+        <div class="skill-tile reveal-item" style="animation-delay:0.40s;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#00C2FF" stroke-width="1.5" class="skill-icon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+          </svg>
+          <span class="skill-label">Computer Vision</span>
+        </div>
+
+        <!-- IT Infrastructure -->
+        <div class="skill-tile reveal-item" style="animation-delay:0.45s;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="1.5" class="skill-icon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 0 1-3-3m3 3a3 3 0 1 0 0 6h13.5a3 3 0 1 0 0-6m-16.5-3a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3m-19.5 0a4.5 4.5 0 0 1 .9-2.7L5.737 5.1a3.375 3.375 0 0 1 2.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 0 1 .9 2.7m0 0a3 3 0 0 1-3 3m0 3h.008v.008h-.008v-.008Zm0-6h.008v.008h-.008v-.008Zm-3 6h.008v.008h-.008v-.008Zm0-6h.008v.008h-.008v-.008Z" />
+          </svg>
+          <span class="skill-label">IT Infrastructure</span>
+        </div>
+
+        <!-- Web Development -->
+        <div class="skill-tile reveal-item" style="animation-delay:0.50s;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#00C2FF" stroke-width="1.5" class="skill-icon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+          </svg>
+          <span class="skill-label">Web Development</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT SECTION ===================== -->
+  <section id="contact" class="py-24 px-6" style="background-color:#0a0f1e;">
+    <div class="max-w-4xl mx-auto">
+
+      <!-- Section header -->
+      <div class="section-header mb-6 reveal-item text-center">
+        <span class="section-label">Let's Talk</span>
+        <h2 class="section-title font-display font-bold text-3xl sm:text-4xl md:text-5xl text-white mt-2">Get In Touch</h2>
+        <div class="section-line mt-4 mx-auto"></div>
+      </div>
+
+      <p class="text-gray-400 text-center text-base sm:text-lg mb-12 reveal-item" style="animation-delay:0.1s;">
+        Have a project in mind or want to collaborate? I'd love to hear from you.
+      </p>
+
+      <!-- Contact form -->
+      <form id="contact-form" class="contact-form reveal-item" style="animation-delay:0.2s;" novalidate>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+          <div class="form-group">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" class="form-input" required />
+          </div>
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" class="form-input" required />
+          </div>
+        </div>
+        <div class="form-group mb-5">
+          <label for="subject" class="form-label">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="What's this about?" class="form-input" required />
+        </div>
+        <div class="form-group mb-7">
+          <label for="message" class="form-label">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." class="form-input resize-none" required></textarea>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn-primary px-10 py-3.5 rounded-md font-semibold text-white text-sm tracking-wide transition-all duration-300 w-full sm:w-auto">
+            Send Message
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 inline ml-2">
+              <path d="M3.105 2.288a.75.75 0 0 0-.826.95l1.454 4.425H7.5a.75.75 0 0 1 0 1.5H3.733l-1.813 5.52a.75.75 0 0 0 1.073.919l13.5-9a.75.75 0 0 0 0-1.25l-13.5-9a.75.75 0 0 0-.888.006Z" />
+              <path d="M9.25 4.75a.75.75 0 0 0 0 1.5H13.5l-4.591 6.788a.75.75 0 0 0 1.25.832l5-7.5A.75.75 0 0 0 14.5 5.25H9.25Z" opacity="0.5" />
+            </svg>
+          </button>
+        </div>
+        <!-- Form status message -->
+        <p id="form-status" class="text-center mt-5 text-sm hidden"></p>
+      </form>
+
+      <!-- Social links -->
+      <div class="flex items-center justify-center gap-6 mt-14 reveal-item" style="animation-delay:0.3s;">
+        <!-- GitHub -->
+        <a href="#" class="social-icon-link" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z" clip-rule="evenodd" />
+          </svg>
+        </a>
+        <!-- LinkedIn -->
+        <a href="#" class="social-icon-link" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065Zm1.782 13.019H3.555V9h3.564v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003Z" />
+          </svg>
+        </a>
+        <!-- Twitter/X -->
+        <a href="#" class="social-icon-link" aria-label="X (Twitter)">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="py-10 px-6 border-t border-border-dark" style="background-color:#060b17;">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-gray-600 text-sm">© 2025 Blessed Darko Yirenkyi. All rights reserved.</p>
+      <nav class="flex gap-6 text-gray-600 text-sm">
+        <a href="#about"    class="smooth-scroll hover:text-gray-400 transition-colors">About</a>
+        <a href="#projects" class="smooth-scroll hover:text-gray-400 transition-colors">Projects</a>
+        <a href="#skills"   class="smooth-scroll hover:text-gray-400 transition-colors">Skills</a>
+        <a href="#contact"  class="smooth-scroll hover:text-gray-400 transition-colors">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Main JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>
