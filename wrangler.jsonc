@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "blessed-darko-yirenkyi",
+  "compatibility_date": "2026-07-25",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "docs"
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
+}
